@@ -1,1 +1,16 @@
 /* pages/search/search.wxss */
+page{
+  background-color: #F7F7F7;
+}
+.search-content{
+  margin-top: 40rpx;
+}
+.search-item{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #fff;
+  padding: 20rpx;
+  border: 2rpx solid #eee;
+  color: #5E5E5E;
+}

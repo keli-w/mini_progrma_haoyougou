@@ -7,6 +7,7 @@
   <view wx:else class="search-navigator" >
     <text>搜索</text>
     <input style="width: 80%;" placeholder="请输入商品名称/ID" placeholder-style="color: #ccc;" bindinput="changeInput"></input>
+    <text class="iconfont icon-qingchu"></text>
     <text>🔍</text>
   </view>
 </view>

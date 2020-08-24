@@ -5,7 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userInfo: {},
+    collectShops: 0,//收藏的店铺
+    collectGoods: 0,//收藏的商品
+    followGoods: 0,//关注的商品
+    myTrace: 0,//我的足迹
+  },
 
+  // 点击收藏的商品，前往收集商品列表页
+  gotoCollectUrl(){
+    wx.redirectTo({
+      url: '/pages/collect/collect',
+    })
   },
 
   /**
@@ -26,7 +37,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // 获取缓存的用户信息
+    const userInfo = wx.getStorageSync('userInfo')
+    const collectGoods = wx.getStorageSync('collectGoods')
+    this.setData({
+      userInfo,
+      collectGoods: collectGoods.length
+    })
   },
 
   /**

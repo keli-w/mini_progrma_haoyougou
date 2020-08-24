@@ -23,11 +23,7 @@ Component({
   methods: {
     changeTab(e){
       const {index} = e.currentTarget.dataset
-      const {tabs} = this.data
-      tabs.map((item, i) => i === index ? item.isActive = true : item.isActive = false)
-      this.setData({
-        tabs
-      })
+      this.triggerEvent('itemChange', {index})
     }
   }
 })

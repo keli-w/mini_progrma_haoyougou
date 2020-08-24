@@ -33,6 +33,16 @@ Page({
   },
   total: '',
 
+  // 改变tab组件的激活状态
+  handelItemchange(e){
+    const {index} = e.detail
+    const {tabs} = this.data
+    tabs.map((item, i) => i === index ? item.isActive = true : item.isActive = false)
+    this.setData({
+      tabs
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -49,6 +59,9 @@ Page({
   // 获取商品列表数据
   getGoodsList(){
     request({url: 'https://api-hmugo-web.itheima.net/api/public/v1/goods/search', data: this.data.queryParams}).then(result =>{
+      if (result){
+        wx.stopPullDownRefresh()
+      }
       this.setData({
         goodsList: [...this.data.goodsList, ...result.data.message.goods],
         total: result.data.message.total
@@ -91,7 +104,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      goodsList: []
+    })
+    this.getGoodsList()
   },
 
   /**

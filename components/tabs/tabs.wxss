@@ -9,8 +9,12 @@
 .tab{
   width: 33.3%;
   padding: 20rpx 0;
+  color: #808080;
 }
 .active{
 color: var(--themeColor);
 border-bottom: 2rpx solid var(--themeColor);
+}
+.tab-content{
+  margin-top: 40rpx;
 }

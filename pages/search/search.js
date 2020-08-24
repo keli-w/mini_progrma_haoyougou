@@ -1,11 +1,32 @@
 // pages/search/search.js
+import {request} from '../../request/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    searchList: []
+  },
 
+  // 关键字搜索
+  handelInputchange(e){
+    const value = e.detail.value
+    clearTimeout(this.timer)
+    this.timer = setTimeout(() => {
+      console.log(value)
+      this.queryGoods(value)
+    }, 1000);
+  },
+
+  // 搜索查询请求
+  queryGoods(query){
+    request({url: 'https://api-hmugo-web.itheima.net/api/public/v1/goods/qsearch', data: {query}}).then(result => {
+      console.log(result)
+      this.setData({
+        searchList: result.data.message
+      })
+    })
   },
 
   /**

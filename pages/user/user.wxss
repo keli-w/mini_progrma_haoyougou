@@ -1,1 +1,93 @@
 /* pages/user/user.wxss */
+page{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.user-login{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: thistle;
+}
+/* 已登录时的样式 */
+.user-info{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.big-avatarUrl{
+  width: 100%;
+  height: 100%;
+  filter: blur(10rpx);
+}
+.user-avatarUrl{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.user-avatarUrl image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user-avatarUrl view{
+  color: #ddd;
+  margin-top: 40rpx;
+}
+
+/* 未登录时的样式 */
+.noLogin{
+  color: #ddd;
+}
+.icon-weidenglutouxiang{
+  font-size: 150rpx;
+  margin-bottom: 20rpx;
+}
+.user-content{
+  flex: 2;
+  background-color: #ddd;
+  position: relative;
+}
+.bg-co{
+  position: absolute;
+  top: -20rpx;
+  left: 50%;
+  width: 95%;
+  transform: translateX(-50%);
+  font-size: 30rpx;
+}
+.history{
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.history-item{
+  text-align: center;
+  padding: 10rpx 0;
+}
+.item-num{
+  color: var(--themeColor);
+}
+.item-name{
+  color: #6F6F6F;
+}
+.orderItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 20rpx;
+  color: #6F6F6F;
+}
+.shipAddress, .recommend{
+  margin: 20rpx 0;
+}
+.kefu, .suggestion, .about{
+  border-bottom: 2rpx solid #ddd;
+}

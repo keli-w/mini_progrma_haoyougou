@@ -1,2 +1,22 @@
 <!--pages/collect/collect.wxml-->
-<text>pages/collect/collect.wxml</text>
+<tabs tabs="{{tabs}}" binditemChange="handelItemchange">
+<block wx:if="{{tabs[0].isActive}}">
+  <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" class="goods_list" wx:for="{{collectGoods}}" wx:key="goods_id">
+    <view class="left-good">
+      <image mode="widthFix" src="{{item.pics[0].pics_sma_url ? item.pics[0].pics_sma_url  : 'http://image4.suning.cn/uimg/b2c/newcatentries/0000000000-000000000775604287_1_400x400.jpg'}}"></image>
+    </view>
+    <view class="right-good">
+      <view class="goodInfo">{{item.goods_name}}</view>
+      <text class="goodPrice">¥{{item.goods_price}}</text>
+    </view>
+    <view class="collectMark">
+      <text class="iconfont icon-shoucang_shixin;"></text>
+      <view>已收藏</view>
+    </view>
+  </navigator>
+</block>
+<block wx:elif="{{tabs[1].isActive}}">收藏的商品</block>
+<block wx:elif="{{tabs[2].isActive}}">关注的商品</block>
+<block wx:else>我的足迹</block>
+</tabs>
+

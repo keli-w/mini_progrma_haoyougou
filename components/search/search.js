@@ -22,7 +22,8 @@ Component({
    */
   methods: {
     changeInput(e){
-      this.triggerEvent('ChangeInput', e.detail.value)
+      const value = e.detail.value
+      this.triggerEvent('changeInput', {value})
     }
   }
 })

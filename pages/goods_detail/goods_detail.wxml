@@ -8,8 +8,8 @@
   <text class="good-price">¥{{goodsDatailInfo.goods_price}}</text>
   <view class="good-info">
     <view class="left-name">{{goodsDatailInfo.goods_name}}</view>
-    <view class="right-btn">
-      <text class="iconfont icon-shoucang;"></text>
+    <view class="right-btn" bindtap="handelCollect" data-goodsInfo="{{goodsDatailInfo}}">
+      <text class="iconfont {{isCollect ? 'icon-shoucang_shixin ': 'icon-shoucang'}};"></text>
       <view>收藏</view>
     </view>
   </view>

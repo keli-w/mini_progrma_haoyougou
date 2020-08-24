@@ -1,14 +1,19 @@
 <!--pages/goods_list/goods_list.wxml-->
 <search bindChangeInput="OnchangeInput"></search>
 <view class="main">
-  <tabs tabs="{{tabs}}"></tabs>
-  <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" class="goods_list" wx:for="{{goodsList}}" wx:key="goods_id">
-    <view class="left-good">
-      <image mode="widthFix" src="{{item.goods_small_logo ? item.goods_small_logo : 'http://image4.suning.cn/uimg/b2c/newcatentries/0000000000-000000000775604287_1_400x400.jpg'}}"></image>
-    </view>
-      <view class="right-good">
-        <view class="goodInfo">{{item.goods_name}}</view>
-        <text class="goodPrice">¥{{item.goods_price}}</text>
+  <tabs tabs="{{tabs}}" binditemChange="handelItemchange">
+  <block wx:if="{{tabs[0].isActive}}">
+    <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" class="goods_list" wx:for="{{goodsList}}" wx:key="goods_id">
+      <view class="left-good">
+        <image mode="widthFix" src="{{item.goods_small_logo ? item.goods_small_logo : 'http://image4.suning.cn/uimg/b2c/newcatentries/0000000000-000000000775604287_1_400x400.jpg'}}"></image>
       </view>
-  </navigator>
+        <view class="right-good">
+          <view class="goodInfo">{{item.goods_name}}</view>
+          <text class="goodPrice">¥{{item.goods_price}}</text>
+        </view>
+    </navigator>
+  </block>
+  <block wx:elif="{{tabs[1].isActive}}">销量</block>
+  <block wx:else>价格</block>
+  </tabs>
 </view>

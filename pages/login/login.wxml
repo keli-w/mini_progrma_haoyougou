@@ -1,2 +1,4 @@
 <!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<view class="login-btn">
+  <button open-type="getUserInfo" type="primary" plain bindgetuserinfo="handelGetuserInfo">登录授权</button>
+</view>

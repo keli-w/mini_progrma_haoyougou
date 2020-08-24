@@ -1,2 +1,60 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="user-login">
+  <block wx:if="{{userInfo.nickName}}">
+    <view class="user-info">
+      <image class="big-avatarUrl" mode="scaleToFill" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user-avatarUrl">
+        <image mode="widthFix" src="{{userInfo.avatarUrl}}"></image>
+        <view>{{userInfo.nickName}}</view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <navigator url="/pages/login/login" class="noLogin">
+      <view class="iconfont icon-weidenglutouxiang"></view>
+      <text>请预先登录</text>
+    </navigator>
+  </block>
+</view>
+<view class="user-content">
+  <view class="bg-co">
+    <view class="history">
+      <view class="history-item">
+        <view class="item-num">{{collectShops}}</view>
+        <view class="item-name">收藏的店铺</view>
+      </view>
+      <view class="history-item" bindtap="gotoCollectUrl">
+        <view class="item-num">{{collectGoods}}</view>
+        <view class="item-name">收藏的商品</view>
+      </view>
+      <view class="history-item">
+        <view class="item-num">{{followGoods}}</view>
+        <view class="item-name">关注的商品</view>
+      </view>
+      <view class="history-item">
+        <view class="item-num">{{myTrace}}</view>
+        <view class="item-name">我的足迹</view>
+      </view>
+    </view>
+    <view class="shipAddress orderItem">
+      <text>收获地址管理</text>
+      <text class="iconfont icon-youjiantou"></text>
+    </view>
+    <view class="kefu orderItem">
+      <text>联系客服</text>
+      <text>400-618-4000</text>
+    </view>
+    <view class="suggestion orderItem">
+      <text>意见反馈</text>
+      <text class="iconfont icon-youjiantou"></text>
+    </view>
+    <view class="about orderItem">
+      <text>关于我们</text>
+      <text class="iconfont icon-youjiantou"></text>
+    </view>
+    <view class="recommend orderItem">
+      <text>把应用推荐给他人</text>
+      <text class="iconfont icon-youjiantou"></text>
+    </view>
+  </view>
+</view>

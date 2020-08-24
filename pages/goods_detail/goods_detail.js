@@ -6,9 +6,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodsDatailInfo: {}
+    goodsDatailInfo: {},
+    isCollect: false, //表示该商品是否被收藏
   },
 
+  // 点击进行商品收藏
+  handelCollect(e){
+    const cart = e.currentTarget.dataset.goodsinfo
+    const collectGoods = wx.getStorageSync('collectGoods') || []
+    const index = collectGoods.findIndex(item => item.goods_id === cart.goods_id)
+    const {isCollect} = this.data
+    if (!isCollect){
+      this.setData({
+        isCollect: true
+      })
+      collectGoods.push(cart) 
+      wx.showToast({
+        title: '收藏成功',
+        icon: 'success',
+        mask: true
+      })
+    } else {
+      this.setData({
+        isCollect: false
+      })
+      collectGoods.splice(index, 1)
+      wx.showToast({
+        title: '取消成功',
+        icon: 'success',
+        mask: true
+      })
+    }
+    wx.setStorageSync('collectGoods', collectGoods)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -19,7 +49,8 @@ Page({
   getgoodsDetail(id){
     request({url: 'https://api-hmugo-web.itheima.net/api/public/v1/goods/detail', data: {goods_id: id}}).then(result => {
       const res = result.data.message
-      console.log(res)
+      const collectGoods = wx.getStorageSync('collectGoods') || []
+      const isCollect = collectGoods.some(item => item.goods_id === res.goods_id)
       this.setData({
         goodsDatailInfo: {
           pics: res.pics,
@@ -27,7 +58,8 @@ Page({
           goods_name: res.goods_name,
           goods_price: res.goods_price,
           goods_id: res.goods_id
-        }
+        },
+        isCollect
       })
     })
   },

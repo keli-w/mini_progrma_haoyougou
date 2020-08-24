@@ -8,6 +8,15 @@ Page({
 
   },
 
+  // 获取授权信息
+  handelGetuserInfo(e){
+    const data = e.detail.userInfo
+    wx.setStorageSync('userInfo', data)
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
