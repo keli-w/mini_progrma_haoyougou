@@ -1,0 +1,12 @@
+<!--components/search/search.wxml-->
+<view class="search">
+  <navigator wx:if="{{url !== ''}}" class="search-navigator" url="{{url}}">
+    <text>搜索</text>
+    <text>🔍</text>
+  </navigator>
+  <view wx:else class="search-navigator" >
+    <text>搜索</text>
+    <input style="width: 80%;" placeholder="请输入商品名称/ID" placeholder-style="color: #ccc;" bindinput="changeInput"></input>
+    <text>🔍</text>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<!--pages/index/index.wxml-->
+<search url="/pages/search/search"></search>
+<swiper indicator-dots	autoplay circular interval="1000">
+  <swiper-item class="banner" wx:for="{{bannerList}}" wx:key="goods_id">
+    <navigator url="{{item.navigator_url}}">
+      <image class="banner-img" mode="widthFix" src="{{item.image_src}}"></image>
+    </navigator>
+  </swiper-item>
+</swiper>
+<view class="navigations">
+  <view class="navigation-bar" wx:for="{{navigators}}" wx:key="name">
+    <navigator wx:if="{{!!item.navigator_url}}" url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+      <image class="img-bar" mode="widthFix" src="{{item.image_src}}"></image>
+    </navigator>
+    <view wx:else>
+      <image class="img-bar" mode="widthFix"  src="{{item.image_src}}"></image>
+    </view>
+  </view>
+</view>
+<view class="floorInfo">
+  <view wx:for="{{floordata}}" wx:key="name">
+    <image class="floor_title" mode="widthFix" src="{{item.floor_title.image_src}}"></image>
+    <view style="overflow: hidden">
+          <navigator class="product_list" url="{{shop.navigator_url}}" open-type="{{shop.open_type}}" wx:for="{{item.product_list}}" wx:for-item="shop" wx:for-index="i" wx:key="name">
+          <image class="product-item" mode="{{i===0 ? 'widthFix' : 'scaleFill'}}" src="{{shop.image_src}}"></image>
+        </navigator>
+    </view>
+  </view>
+</view>

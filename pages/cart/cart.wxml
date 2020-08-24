@@ -1,0 +1,57 @@
+<!--pages/cart/cart.wxml-->
+<view class="addressInfo">
+   <view class="info">
+      <view class="address">滨江西兮知道见风使舵/{{addressInfo.housenum}}</view>
+      <view class="contacts">{{addressInfo.contacts}}王荣欢</view>
+      <view class="phonenum">{{addressInfo.phonenum}}18843888358949</view>
+   </view>
+   <view class="iconfont icon-gouwudai"></view>
+</view>
+<view class="address-contanier" bindtap="addAdress"> 
+   <view class="add-address">+添加收货地址</view>
+</view>
+<view class="content">
+   <view class="cart-main">
+      <view class="cart-title">购物车</view>
+      <view hidden="{{goodsInfoList.length < 0}}" class="cart-content" wx:for="{{goodsInfoList}}" wx:key="index">
+         <view class="check">
+            <checkbox-group bindchange="checkChange" data-id="{{item.goodsInfo.goods_id}}">
+            <checkbox class="cb" checked="{{item.goods_checked}}"></checkbox>
+            </checkbox-group>
+         </view>
+         <view class="left">
+            <image mode="widthFix" src="{{item.goodsInfo.pics[0].pics_sma_url}}"></image>
+         </view>
+         <view class="right">
+            <text class="cart-info">{{item.goodsInfo.goods_name}}</text>
+            <view class="cart-op">
+               <text class="price">¥{{item.goodsInfo.goods_price}}</text>
+               <view class="num">
+                  <text class="iconfont icon-jia" bindtap="handelcutAndadd" data-id="{{item.goodsInfo.goods_id}}" data-mode="{{1}}"></text>
+                  <text class="num-total">{{item.goods_num}}</text>
+                  <text class="iconfont icon-jian" bindtap="handelcutAndadd" data-id="{{item.goodsInfo.goods_id}}" data-mode="{{-1}}"></text>
+               </view>
+            </view>
+         </view>
+      </view>
+      <view class="clearCart" hidden="{{goodsInfoList.length > 0}}" >
+         <image mode="widthFix" src="/images/kongcart-min.png"></image>
+         <text>购物车中空空如也，赶快买买吧！</text>
+         <navigator url="/pages/category/category" open-type="switchTab">去逛逛</navigator>
+      </view>
+   </view>
+   <view class="bottom-operation">
+      <view class="checkAll">
+         <checkbox-group bindchange="checkAll">
+            <checkbox checked="{{checkedAll}}">  全选</checkbox>
+         </checkbox-group>
+      </view>
+      <view class="totalPrice">
+         <view class="totalPrice-top">合计：<text>¥{{totalPrice}}</text></view>
+         <view class="totalPrice-bottom">包含运费</view>
+      </view>
+      <view class="pay-btn">
+         <navigator url="/pages/pay/pay">结算({{totalNum}})</navigator>
+      </view>
+   </view>
+</view>

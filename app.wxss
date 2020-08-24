@@ -1,0 +1,14 @@
+/**app.wxss**/
+@import "./styles/iconfont.wxss";
+/* 定义应用的默认样式 */
+page,view, view-scorll,text,swiper,swiper-item,image,navigator{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+page{
+  /* 定义应用的主题颜色 */
+  --themeColor:#eb4450;
+  /* 统一字体大小 */
+  font-size: 28rpx;
+}

@@ -1,0 +1,150 @@
+/* pages/cart/cart.wxss */
+.addressInfo{
+  padding: 10rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  background-color: #c9c9c9;
+}
+.address-contanier{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.add-address{
+  width: 80%;
+  font-size: 30rpx;
+  padding: 20rpx;
+  border: 2rpx solid #808080;
+  border-radius: 10rpx;
+  text-align: center;
+  background-color: #eee;
+  color: #808080;
+}
+.content{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cart-main{
+  overflow: hidden;
+  flex: 1;
+}
+.cart-title{
+  font-size: 30rpx;
+  padding: 20rpx 15rpx;
+}
+.cart-content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10rpx;
+  border-bottom: 2rpx solid #c9c9c9;
+}
+.check{
+  padding-right: 10rpx;
+}
+.cb{
+  transform: scale(0.8, 0.8);
+}
+.left{
+  flex: 2;
+}
+.left image{
+  width: 80%;
+}
+.right{
+  flex: 5;
+  margin-left: 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cart-info{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 30rpx;
+  font-size: 24rpx;
+}
+.cart-op{
+  display: flex;
+  justify-content: space-between;
+}
+.cart-op .price{
+  color: var(--themeColor);
+  font-size: 30rpx;
+}
+.num{
+  padding: 15rpx;
+}
+.num .iconfont{
+  border: 1px solid;
+  font-size: 24rpx;
+}
+.num .num-total{
+  padding: 0 20rpx;
+}
+/* 底部结算操作 */
+.bottom-operation{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  font-size: 30rpx;
+  border-top: 1rpx solid #fff;
+  background-color: #fff;
+}
+.checkAll{
+  transform: scale(0.8, 0.8);
+}
+.totalPrice-top text{
+  color: var(--themeColor)
+}
+.totalPrice-bottom{
+  color: #ccc;
+  text-align: right;
+  font-size: 24rpx;
+}
+.pay-btn{
+  color: white;
+  background-color: var(--themeColor);
+  height: 96rpx;
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 购物车为空的时候的渲染 */
+.clearCart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.clearCart image{
+  width: 30%;
+}
+.clearCart text{
+  color: #ddd;
+}
+.clearCart navigator{
+  width: 50%;
+  height: 80rpx;
+  padding: 10rpx 40rpx;
+  background-color: #E44E4E;
+  color: white;
+  text-align: center;
+  line-height: 60rpx;
+  margin-top: 50rpx;
+  border-radius: 20rpx;
+}

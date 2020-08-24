@@ -1,0 +1,33 @@
+/* pages/index/index.wxss */
+.banner-img{
+  width: 100%;
+}
+.navigations{
+  padding: 10rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-around;
+  height: 150rpx;
+}
+.img-bar{
+  width: 100rpx;
+}
+.floor_title{
+  width: 100%;
+}
+.product_list{
+  float: left;
+  width: 33.3%;
+}
+.product_list:nth-last-child(-n+4){
+  height: calc(33.33vw * 386 / 232 / 2);
+  /* height: 27.72vw; */
+}
+.product_list:nth-last-child(-n+4) .product-item{
+  padding-left: 10rpx;
+  padding-bottom: 10rpx;
+}
+.product-item{
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,6 @@
+<!--components/tabs/tabs.wxml-->
+<view class="tab-container">
+  <view class="tab {{item.isActive ? 'active' : ''}}" bindtap="changeTab" data-index="{{index}}" wx:for="{{tabs}}" wx:key="id">{{item.tab}}</view>
+</view>
+<solt></solt>
+

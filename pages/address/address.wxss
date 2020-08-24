@@ -1,0 +1,48 @@
+/* pages/address/address.wxss */
+page{
+  background-color: #eee;
+}
+.contanier{
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.input-contanier{
+  display: flex;
+  padding: 20rpx;
+  margin: 0 10rpx;
+  border-bottom: 2rpx solid #c9c9c9;
+}
+.labe{
+  flex: 1
+}
+.input-contanier input{
+  flex: 4;
+}
+.icon-youjiantou{
+  color: #c9c9c9;
+  font-size: 50rpx;
+}
+.placeholder-class{
+  color: #c9c9c9;
+}
+.saveAddress{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 40rpx;
+}
+.saveAddress-btn{
+  width: 80%;
+  background-color: #835738;
+  text-align: center;
+  border-radius: 20rpx;
+}
+.saveAddress-btn button{
+  width: 100%;
+  height: 100%;
+  background-color: #835738;
+  color: #fff;
+  font-size: 30rpx;
+}

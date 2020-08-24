@@ -1,0 +1,29 @@
+<!--pages/address/address.wxml-->
+<form bindsubmit="submitAddress" class="contanier">
+  <view class="input-contanier">
+    <text class="labe">联系人</text>
+    <input name="contacts" placeholder="请填写收获人姓名" placeholder-class="placeholder-class" bindinput="changeContacts"></input>
+  </view>
+  <view class="input-contanier">
+    <text class="labe">手机号</text>
+    <input name="phonenum" placeholder="请填写收货人手机号" placeholder-class="placeholder-class" bindinput="changePhonenum"></input>
+  </view>
+  <view class="input-contanier" bindtap="selectAddress">
+    <text class="labe">收获地址</text>
+    <view style="display: flex; flex: 4;">
+      <!-- <view style="flex: 4;color:#c9c9c9">请填写你的收获地址</view> -->
+      <input name="address" placeholder="请填写你的收获地址" placeholder-class="placeholder-class" disabled value="{{address}}"></input>
+      <text class="iconfont icon-youjiantou"></text>
+    </view>
+  </view>
+  <view class="input-contanier">
+    <text class="labe">门牌号</text>
+    <input name="housenum" placeholder="例：B座304室" placeholder-class="placeholder-class" bindinput="changeHousenum"></input>
+  </view>
+  <view class="saveAddress">
+    <view class="saveAddress-btn">
+      <button form-type="submit">保存地址</button>
+    </view>
+  </view>
+</form>
+
