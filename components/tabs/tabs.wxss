@@ -1,10 +1,14 @@
 /* components/tabs/tabs.wxss */
+page{
+  background-color: #F7F7F7;
+}
 .tab-container{
   display: flex;
   justify-content: space-around;
   align-items: center;
   text-align: center;
   border-bottom: 2rpx solid #ccc;
+  background-color: #fff;
 }
 .tab{
   width: 33.3%;

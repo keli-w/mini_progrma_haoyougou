@@ -44,10 +44,10 @@
       <text>联系客服</text>
       <text>400-618-4000</text>
     </view>
-    <view class="suggestion orderItem">
+    <navigator url="/pages/feedback/feedback" class="suggestion orderItem">
       <text>意见反馈</text>
       <text class="iconfont icon-youjiantou"></text>
-    </view>
+    </navigator>
     <view class="about orderItem">
       <text>关于我们</text>
       <text class="iconfont icon-youjiantou"></text>

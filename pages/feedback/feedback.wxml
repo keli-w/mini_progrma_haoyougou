@@ -1,2 +1,26 @@
 <!--pages/feedback/feedback.wxml-->
-<text>pages/feedback/feedback.wxml</text>
+<tabs tabs="{{tabs}}" binditemChange="handelItemchange">
+  <block wx:if="{{tabs[0].isActive}}">
+    <view class="content">
+      <view class="catage">
+        <view class="catage-title">问题种类</view>
+        <view class="catage-item" >
+          <view wx:for="{{problemItem}}" wx:key="*this">{{item}}</view>
+        </view>
+      </view>
+      <view  class="textArea">
+        <textarea bindinput="handelTexts" placeholder="请描述下你的问题" placeholder-class="placeholderClass"></textarea>
+      </view>
+      <view class="up-img">
+        <view class="up-icon" bindtap="handelUploadimg">+</view>
+        <view class="up-content"></view>
+          <uploadImg wx:if="{{tempFilePaths.length > 0}}" binddelUploadimg="handeldelUploadimg" tempFilePaths="{{tempFilePaths}}"></uploadImg>
+        </view>
+        <view class="submit-btn" bindtap="handelSubmit">
+          <icon color="#fff" type="success_no_circle"></icon>
+          <text>提交</text>
+        </view>
+    </view>
+  </block>
+  <block wx:else>商品、商家投诉</block>
+</tabs>

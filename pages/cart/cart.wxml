@@ -1,15 +1,19 @@
 <!--pages/cart/cart.wxml-->
-<view class="addressInfo">
-   <view class="info">
-      <view class="address">{{addressInfo.address}}/{{addressInfo.housenum}}</view>
-      <view class="contacts">{{addressInfo.contacts}}</view>
-      <view class="phonenum">{{addressInfo.phonenum}}</view>
+<block wx:if="{{addressInfo.address || addressInfo.housenum || addressInfo.contacts ||  addressInfo.phonenum}}">
+   <view class="addressInfo">
+      <view class="info">
+         <view class="address">{{addressInfo.address}}{{addressInfo.housenum}}</view>
+         <view class="contacts">{{addressInfo.contacts}}</view>
+         <view class="phonenum">{{addressInfo.phonenum}}</view>
+      </view>
+      <view class="iconfont icon-gouwudai"></view>
    </view>
-   <view class="iconfont icon-gouwudai"></view>
-</view>
-<view class="address-contanier" bindtap="addAdress"> 
-   <view class="add-address">+添加收货地址</view>
-</view>
+</block>
+<block wx:else>
+   <view class="address-contanier" bindtap="addAdress"> 
+      <view class="add-address">+添加收货地址</view>
+   </view>
+</block>
 <view class="content">
    <view class="cart-main">
       <view class="cart-title">购物车</view>

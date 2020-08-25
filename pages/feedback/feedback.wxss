@@ -1,1 +1,66 @@
 /* pages/feedback/feedback.wxss */
+.content{
+  background-color: #F7F7F7;
+  padding: 10rpx 20rpx;
+  color: #666;
+}
+.catage-title{
+  font-size: 30rpx;
+}
+.catage-item{
+  display: flex;
+  flex-wrap: wrap;
+}
+.catage-item view {
+  width: 30%;
+  background-color: #fff;
+  margin: 20rpx 10rpx;
+  text-align: center;
+  padding: 10rpx 0;
+}
+.textArea{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.textArea textArea{
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx;
+}
+.placeholderClass{
+  color: #c9c9c9;
+}
+.up-img{
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  padding: 0 0 20rpx 20rpx
+}
+.up-icon{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #ddd;
+  border-radius: 10rpx;
+  font-size: 60rpx;
+  color: #777;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+/* 提交按钮 */
+.submit-btn{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--themeColor);
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  width: 30%;
+  border-radius: 10rpx;
+  float: right;
+  margin-top: 20rpx;
+}

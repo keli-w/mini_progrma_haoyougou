@@ -1,0 +1,7 @@
+<!--components/uploadImg/uploadImg.wxml-->
+<view class="upload-container">
+  <view class="up-img" wx:for="{{tempFilePaths}}" wx:key="*this" >
+    <image src="{{item}}"></image>
+    <icon type="clear" size="23" color="red" bindtap="delUploadimg" data-id="{{index}}"></icon>
+  </view>
+</view>

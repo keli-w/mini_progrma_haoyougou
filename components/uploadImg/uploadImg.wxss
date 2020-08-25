@@ -1,0 +1,21 @@
+/* components/uploadImg/uploadImg.wxss */
+.upload-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.up-img{
+  width: 100%;
+  position: relative;
+  margin-left: 10rpx;
+}
+.up-img image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.up-img icon{
+  position: absolute;
+  left: 65rpx;
+  top: -10rpx;
+}

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": false,
 		"postcss": true,
@@ -118,6 +118,13 @@
 					"id": -1,
 					"name": "商品列表",
 					"pathName": "pages/goods_list/goods_list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "意见反馈",
+					"pathName": "pages/feedback/feedback",
 					"query": "",
 					"scene": null
 				}
